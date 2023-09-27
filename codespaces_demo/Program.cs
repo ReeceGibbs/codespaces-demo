@@ -24,7 +24,7 @@ var motivationalQuotes = new[]
 app.MapGet("motivation", () =>
 {
     var random = new Random();
-    return motivationalQuotes[random.Next(motivationalQuotes.Length)];
+    return $"Your daily motivation for {DateTime.Now:D} is:\n'{motivationalQuotes[random.Next(motivationalQuotes.Length)]}' - Reece (2023)\n";
 })
 .WithName("GetMotivated")
 .WithOpenApi();
